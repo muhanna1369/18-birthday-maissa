@@ -1,0 +1,66 @@
+/* ===================================================
+   RESPONSIVE.CSS — Mobile & tablet adjustments
+   =================================================== */
+
+@media (max-width: 768px) {
+  .hero-eighteen {
+    font-size: clamp(6rem, 22vw, 14rem);
+  }
+
+  .wishes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline-item {
+    padding-left: 1rem;
+  }
+
+  .timeline-item::before {
+    left: -2.35rem;
+    width: 10px;
+    height: 10px;
+  }
+
+  .wishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cake-container {
+    transform: scale(0.85);
+  }
+
+  .timeline-photo,
+  .timeline-photo-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-name-main {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  #music-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 400px) {
+  .timeline-photo,
+  .timeline-photo-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .section {
+    padding: 3rem 1.2rem;
+  }
+}
