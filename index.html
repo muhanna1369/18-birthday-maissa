@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maissa Turns 18 ✨</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/candle.css">
+  <link rel="stylesheet" href="css/gift.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ===== INTRO SCREEN ===== -->
+  <div id="intro-screen">
+    <div class="intro-text">You are invited to celebrate</div>
+    <div class="intro-name">Maissa</div>
+    <button id="enter-btn" onclick="enterSite()">Enter the Celebration</button>
+  </div>
+
+  <!-- ===== BACKGROUND CANVASES ===== -->
+  <canvas id="particles-canvas"></canvas>
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- ===== MUSIC TOGGLE ===== -->
+  <button id="music-btn" onclick="toggleMusic()" title="Toggle Music">
+    <div class="bars">
+      <div class="bar" style="height:8px"></div>
+      <div class="bar" style="height:8px"></div>
+      <div class="bar" style="height:8px"></div>
+      <div class="bar" style="height:8px"></div>
+    </div>
+  </button>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-eighteen">18</div>
+      <div class="hero-label">Happy Birthday</div>
+      <div class="hero-name-main">Maissa</div>
+      <div class="hero-scroll-hint">
+        <span>Scroll to celebrate</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- MESSAGE -->
+    <section class="section message-section">
+      <div class="section-tag">A Special Message</div>
+      <div class="section-heading">To My Favourite Piece Of Shit</div>
+      <p class="message-text">
+        Caca finally turns 18 🔞 enfin majeure et vaccinée!!
+        Ima be nice to you today (that's not the case often).
+        Keep being amazing and doing wonders, you’re made to reach the stars ✨
+        May this year be full of pleasant surprises and full of love, because you deserve nothing less 💖
+        I always got your back, so keep being the star you are and fly high Hatay 🚀
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================
+         TIMELINE WITH PHOTOS
+         
+         HOW TO ADD YOUR PHOTOS:
+         1. Put your images in the "images" folder
+         2. Replace the <div class="timeline-photo-placeholder">...</div>
+            with: <img class="timeline-photo" src="images/YOUR_FILE.jpg" alt="description">
+         ============================================ -->
+    <section class="section">
+      <div class="section-tag">The Evolution Of Batwoman</div>
+      <div class="section-heading">18 Years since an accident...</div>
+      <div class="timeline">
+
+        <!-- DAY ONE -->
+        <div class="timeline-item">
+          <div class="timeline-year">Day One</div>
+          <div class="timeline-text">Batwoman spawned– surprising her parents, unplanned but somehow meant to be… fought
+            off a million tadpoles and said “I’m HER” 💅</div>
+          <div class="timeline-photo-wrapper">
+            <img class="timeline-photo" src="images/baby.jpg" alt="Baby Maissa">
+            <div class="timeline-photo-caption">The day it all began</div>
+          </div>
+        </div>
+
+        <!-- CHILDHOOD -->
+        <div class="timeline-item">
+          <div class="timeline-year">Childhood Arc</div>
+          <div class="timeline-text">Small, chaotic, already causing problems… but somehow still the cutest creature
+            alive</div>
+          <div class="timeline-photo-wrapper">
+            <img class="timeline-photo" src="images/childhood.jpg" alt="Young Maissa">
+            <div class="timeline-photo-caption">Growing up with that beautiful smile</div>
+          </div>
+        </div>
+
+        <!-- GROWING UP -->
+        <div class="timeline-item">
+          <div class="timeline-year">Main Character Era</div>
+          <div class="timeline-text">All the way from a nut sack to a whole icon… insane character development and so
+            uniquely wonderful.</div>
+          <div class="timeline-photo-wrapper">
+            <img class="timeline-photo" src="images/now.jpg" alt="Maissa Now">
+            <div class="timeline-photo-caption">Look at you now — absolutely rocking!</div>
+          </div>
+        </div>
+
+        <!-- FUNNY OLD -->
+        <div class="timeline-item">
+          <div class="timeline-year">Still here?? 80s</div>
+          <div class="timeline-text">Evolution tried, life tried… yet the most iconic person in the room, she persisted
+            anyway.</div>
+          <div class="timeline-photo-wrapper funny">
+            <img class="timeline-photo" src="images/old-maissa.jpg" alt="Old Maissa">
+            <div class="timeline-photo-caption">Still slaying at 80 — legend behavior 😂</div>
+          </div>
+        </div>
+
+        <!-- TODAY -->
+        <div class="timeline-item">
+          <div class="timeline-year">Chapter 18 ✨</div>
+          <div class="timeline-text">Here you are. Officially an adult, but forever a lazy fucking couch potato at
+            heart.</div>
+            <div class="timeline-photo-wrapper funny">
+              <img class="timeline-photo" src="images/18-maissa.jpg" alt="Old Maissa">
+              <div class="timeline-photo-caption">Life get's serious, something you could never be-</div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WISHES -->
+    <section class="section">
+      <div class="section-tag">Birthday Wishes</div>
+      <div class="section-heading">Wishing You All Of This & More</div>
+      <div class="wishes-grid">
+        <div class="wish-card">
+          <span class="wish-emoji">✨</span>
+          <div class="wish-title">Endless Adventures</div>
+          <div class="wish-desc">May your life be filled with questionable decisions, random adventures, and stories
+            you’ll regret telling… but we’ll laugh about forever</div>
+        </div>
+        <div class="wish-card">
+          <span class="wish-emoji">💛</span>
+          <div class="wish-title">Boundless Love</div>
+          <div class="wish-desc">May you always be loved despite your very autistic personality, which i can't seem to
+            hate</div>
+        </div>
+        <div class="wish-card">
+          <span class="wish-emoji">🌟</span>
+          <div class="wish-title">Dreams Come True</div>
+          <div class="wish-desc">May every dream you have come true… or at least the realistic ones, let’s not get too
+            ambitious here</div>
+        </div>
+        <div class="wish-card">
+          <span class="wish-emoji">🎉</span>
+          <div class="wish-title">Pure Happiness</div>
+          <div class="wish-desc">May you stay happy and keep laughing… even if most of the time we’re laughing at you
+            and not with you</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CANDLE -->
+    <section class="section candle-section">
+      <div class="section-tag">Make a Wish</div>
+      <div class="section-heading">Blow Out Your Candle</div>
+      <div class="cake-container">
+        <div class="candle">
+          <div class="flame-container" id="flame-container">
+            <div class="flame-glow"></div>
+            <div class="flame" id="flame"></div>
+          </div>
+        </div>
+        <div class="cake-base"></div>
+      </div>
+      <div class="blow-controls">
+        <button id="blow-btn" onclick="startBlowing()">
+          <span class="mic-icon">🎤</span>
+          <span class="btn-label">Tap & Blow</span>
+        </button>
+        <div class="volume-meter" id="volume-meter">
+          <div class="volume-meter-fill" id="volume-fill"></div>
+        </div>
+        <div class="blow-instruction" id="blow-text">Press the button, then blow into your mic!</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FINAL -->
+    <!-- FINAL -->
+    <section class="section final-section">
+      <div class="section-tag">Mon Arabe Préférée</div>
+      <div class="final-name">Have A Blast And Stay Blessed</div>
+      <p class="final-message">
+        Here's to 18 years of being amazing — and to a lifetime of even more.
+      </p>
+      <div class="final-heart" onclick="burstConfetti()">❤️</div>
+
+      <!-- GIFT BOX -->
+      <div class="gift-wrapper" onclick="openGift()">
+        <div class="gift-box" id="gift-box">
+          <div class="gift-lid">
+            <div class="gift-bow">
+              <div class="bow-loop bow-left"></div>
+              <div class="bow-loop bow-right"></div>
+              <div class="bow-knot"></div>
+            </div>
+            <div class="lid-body">
+              <div class="lid-ribbon"></div>
+            </div>
+          </div>
+          <div class="gift-base">
+            <div class="base-ribbon"></div>
+          </div>
+          <div class="gift-sparkles">
+            <span class="gift-sparkle s1">✦</span>
+            <span class="gift-sparkle s2">✧</span>
+            <span class="gift-sparkle s3">✦</span>
+            <span class="gift-sparkle s4">✧</span>
+            <span class="gift-sparkle s5">✦</span>
+          </div>
+        </div>
+        <div class="gift-label">🎁 Open Your Gift From Bled</div>
+      </div>
+    </section>
+
+    <footer>Loads Of Love From Batman :3</footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/music.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/candle.js"></script>
+  <script src="js/fireworks.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
