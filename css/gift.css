@@ -1,0 +1,215 @@
+/* ===================================================
+   GIFT.CSS — Animated gift box with ribbon & sparkles
+   =================================================== */
+
+   .gift-wrapper {
+    margin-top: 3.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .gift-wrapper:hover {
+    transform: scale(1.05);
+  }
+  
+  .gift-wrapper:hover .gift-label {
+    color: var(--gold-bright);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  }
+  
+  .gift-box {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    animation: gift-bounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes gift-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .gift-base {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(135deg, #C9707D, #A3424F);
+    border-radius: 8px 8px 12px 12px;
+    box-shadow: 0 8px 25px rgba(163, 66, 79, 0.5),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .base-ribbon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.1),
+                inset 2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gift-lid {
+    position: absolute;
+    bottom: 72px;
+    left: -6px;
+    width: 132px;
+    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .lid-body {
+    width: 132px;
+    height: 24px;
+    background: linear-gradient(135deg, #D4808D, #B35060);
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lid-ribbon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.1),
+                inset 2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gift-bow {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 30px;
+  }
+  
+  .bow-loop {
+    position: absolute;
+    width: 28px;
+    height: 22px;
+    border: 4px solid var(--gold-bright);
+    border-radius: 50% 50% 50% 50%;
+    top: 4px;
+    background: rgba(255, 215, 0, 0.15);
+  }
+  
+  .bow-left {
+    left: 2px;
+    transform: rotate(-25deg);
+  }
+  
+  .bow-right {
+    right: 2px;
+    transform: rotate(25deg);
+  }
+  
+  .bow-knot {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--gold-bright);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  }
+  
+  .gift-sparkles {
+    position: absolute;
+    inset: -30px;
+    pointer-events: none;
+  }
+  
+  .gift-sparkle {
+    position: absolute;
+    color: var(--gold-bright);
+    font-size: 0.8rem;
+    opacity: 0;
+    animation: sparkle-float 2.5s ease-in-out infinite;
+  }
+  
+  .gift-sparkle.s1 { top: 0; left: 10%; animation-delay: 0s; }
+  .gift-sparkle.s2 { top: 15%; right: 5%; animation-delay: 0.5s; }
+  .gift-sparkle.s3 { bottom: 20%; left: 0; animation-delay: 1s; }
+  .gift-sparkle.s4 { bottom: 10%; right: 10%; animation-delay: 1.5s; }
+  .gift-sparkle.s5 { top: 40%; left: -15%; animation-delay: 0.8s; }
+  
+  @keyframes sparkle-float {
+    0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+    50% { opacity: 1; transform: translateY(-8px) scale(1); }
+  }
+  
+  .gift-label {
+    font-family: var(--font-elegant);
+    font-size: 1.15rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: all 0.4s ease;
+    animation: label-pulse 2.5s ease-in-out infinite;
+  }
+  
+  @keyframes label-pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  .gift-box.opened .gift-lid {
+    transform: translateY(-40px) rotate(-35deg) translateX(-20px);
+    opacity: 0;
+  }
+  
+  .gift-box.opened .gift-base {
+    animation: box-shake 0.4s ease;
+  }
+  
+  .gift-box.opened .gift-sparkles .gift-sparkle {
+    animation: sparkle-burst 0.8s ease-out forwards;
+  }
+  
+  @keyframes box-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-4px) rotate(-2deg); }
+    40% { transform: translateX(4px) rotate(2deg); }
+    60% { transform: translateX(-3px) rotate(-1deg); }
+    80% { transform: translateX(3px) rotate(1deg); }
+  }
+  
+  @keyframes sparkle-burst {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2) translateY(-30px); }
+  }
+  
+  .gift-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 168, 83, 0.08), transparent 70%);
+    animation: gift-glow 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes gift-glow {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+  }
+  
+  @media (max-width: 600px) {
+    .gift-box { width: 100px; height: 100px; }
+    .gift-base { width: 100px; height: 65px; }
+    .lid-body, .gift-lid { width: 112px; }
+    .gift-lid { left: -6px; bottom: 58px; }
+  }
