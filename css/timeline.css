@@ -1,0 +1,124 @@
+/* ===================================================
+   TIMELINE.CSS — Timeline layout & photo styles
+   =================================================== */
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: linear-gradient(180deg, transparent, var(--gold), var(--rose), var(--gold), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -3.35rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 15px rgba(212, 168, 83, 0.5);
+}
+
+.timeline-year {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-text {
+  font-family: var(--font-elegant);
+  font-size: 1.15rem;
+  color: var(--blush);
+  line-height: 1.7;
+}
+
+/* ===== PHOTOS ===== */
+.timeline-photo-wrapper {
+  margin-top: 1.2rem;
+  display: inline-block;
+}
+
+.timeline-photo {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid rgba(212, 168, 83, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(212, 168, 83, 0.1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+  background: linear-gradient(135deg, var(--dark-rose), rgba(201, 112, 125, 0.15));
+}
+
+.timeline-photo:hover {
+  transform: scale(1.05) rotate(1deg);
+  border-color: var(--gold);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(212, 168, 83, 0.2);
+}
+
+/* Placeholder (shown before you add real photos) */
+.timeline-photo-placeholder {
+  width: 240px;
+  height: 240px;
+  border-radius: 16px;
+  border: 2px dashed rgba(212, 168, 83, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, rgba(42, 26, 30, 0.8), rgba(201, 112, 125, 0.08));
+  transition: all 0.4s ease;
+}
+
+.timeline-photo-placeholder:hover {
+  border-color: var(--gold);
+}
+
+.timeline-photo-placeholder .photo-icon {
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
+.timeline-photo-placeholder .photo-label {
+  font-family: var(--font-elegant);
+  font-size: 0.85rem;
+  color: var(--gold);
+  opacity: 0.6;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.timeline-photo-caption {
+  margin-top: 0.6rem;
+  font-family: var(--font-elegant);
+  font-size: 0.9rem;
+  color: rgba(245, 213, 216, 0.6);
+  font-style: italic;
+}
+
+/* Funny old photo variant */
+.timeline-photo-wrapper.funny .timeline-photo-placeholder {
+  border-color: rgba(201, 112, 125, 0.4);
+  background: linear-gradient(135deg, rgba(42, 26, 30, 0.8), rgba(201, 112, 125, 0.12));
+}
