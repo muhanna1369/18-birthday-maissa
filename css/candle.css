@@ -1,0 +1,175 @@
+/* ===================================================
+   CANDLE.CSS — Cake, flame, blow button, volume meter
+   =================================================== */
+
+.candle-section {
+  text-align: center;
+}
+
+.cake-container {
+  margin: 3rem auto;
+  position: relative;
+  width: 200px;
+  height: 260px;
+}
+
+.cake-base {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 120px;
+  background: linear-gradient(180deg, var(--rose), var(--rose-deep));
+  border-radius: 20px 20px 30px 30px;
+  box-shadow: 0 10px 30px rgba(163, 66, 79, 0.4);
+}
+
+.cake-base::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -5px;
+  right: -5px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--champagne), var(--gold));
+  border-radius: 50%;
+}
+
+.cake-base::after {
+  content: '18';
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--gold-bright);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.candle {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 80px;
+  background: linear-gradient(180deg, var(--champagne), var(--gold));
+  border-radius: 4px 4px 2px 2px;
+}
+
+.flame-container {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flame {
+  width: 18px;
+  height: 30px;
+  background: radial-gradient(ellipse at 50% 90%, #FFD700, #FF6B35 50%, transparent 70%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 0.3s ease-in-out infinite alternate;
+  position: relative;
+  transition: filter 0.1s, opacity 0.1s, transform 0.1s;
+}
+
+.flame::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 14px;
+  background: radial-gradient(ellipse, #FFF8DC, #FFD700 70%, transparent);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.flame-glow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent 70%);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.flame.blown-out {
+  animation: blow-out 0.5s ease forwards;
+}
+
+/* ===== BLOW CONTROLS ===== */
+.blow-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+#blow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem 2.2rem;
+  font-family: var(--font-elegant);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+#blow-btn:hover {
+  background: rgba(212, 168, 83, 0.15);
+  transform: scale(1.05);
+}
+
+#blow-btn.listening {
+  border-color: var(--rose);
+  color: var(--rose);
+  animation: mic-pulse 1s ease-in-out infinite;
+}
+
+#blow-btn .mic-icon {
+  font-size: 1.3rem;
+}
+
+.volume-meter {
+  width: 180px;
+  height: 6px;
+  background: rgba(212, 168, 83, 0.12);
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.volume-meter.active {
+  opacity: 1;
+}
+
+.volume-meter-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--rose));
+  border-radius: 3px;
+  transition: width 0.05s ease;
+}
+
+.blow-instruction {
+  font-family: var(--font-elegant);
+  font-size: 1rem;
+  color: rgba(247, 231, 206, 0.5);
+  letter-spacing: 0.15em;
+}
